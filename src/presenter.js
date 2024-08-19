@@ -1,24 +1,17 @@
-import sumar from "./sumador";
-import multiplicar from "./Multiplicador";
+import saludador from "./Saludar";
 
-
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const nombreInput = document.querySelector("#nombrePersona");
+const form = document.querySelector("#nombre-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+    const nombre = nombreInput.value;
+    const saludo = saludador(nombre);
 
-   if (event.submitter.id === "sumar-button") {
+    div.innerHTML = `<p>${saludo}</p>`;
 
-  div.innerHTML = "<p>Resultado de la suma: " + sumar(firstNumber, secondNumber) + "</p>";
-    } else if (event.submitter.id === "multiplicar-button") {
-      
-  div.innerHTML = "<p>Resultado de la multiplicación: " + multiplicar(firstNumber, secondNumber) + "</p>";
-  }
-
+    nombreInput.disabled = true;
+    event.submitter.disabled = true;
 });

@@ -1,5 +1,19 @@
-<html>
-  <body>
-    hola
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot Básico</title>
+</head>
+<body>
+    <h1>Chat Bot Básico</h1>
+    <form id="nombre-form">
+        <label for="Nombre">Ingrese su nombre para iniciar la conversación:</label>
+        <input type="text" id="nombrePersona" required />
+        <input type="submit" value="Saludar" id="confirmar-button" />
+    </form>
+    <div id="resultado-div"></div>
+    
+    <script type="module" src="./src/presenter.js"></script>
+</body>
 </html>
