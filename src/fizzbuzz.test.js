@@ -45,6 +45,10 @@ describe("FizzBuzz",() => {
 
     });
 
+    it("generar FizzBuzz para el 15, por ser multiplo de 3 y 5 ",()=> {
+        expect(generarFizzBuzz(15)).toEqual("FizzBuzz");
+
+    });
 
 });
 
