@@ -3,6 +3,8 @@ function comprobar_bisiesto(numero){
         if(numero % 100 != 0){
             return "bisiesto";
         }
+    }else{
+        return "no bisiesto";
     }
     if(numero % 400 === 0)
     {
