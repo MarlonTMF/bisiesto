@@ -3,7 +3,10 @@ function comprobar_bisiesto(numero){
     {
         return"bisiesto";
     }else{
-        return"no bisiesto"
+        if(numero % 100 === 0){
+            return"no bisiesto";
+        }
+        return"no bisiesto";
     }
 }
 export default comprobar_bisiesto;
