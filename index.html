@@ -3,60 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Bot Básico</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-        }
-        .form-control, .form-group, .btn {
-            margin-bottom: 15px;
-        }
-        #resultado-div {
-            margin-top: 20px;
-        }
-    </style>
+    <title>Comprobar Año Bisiesto</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center mb-4">Chat Bot Básico</h1>
-        <form id="nombre-form" class="form">
-            <div class="form-group">
-                <label for="nombrePersona">Nombre:</label>
-                <input type="text" id="nombrePersona" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="sexoPersona">Género:</label>
-                <input type="text" id="sexoPersona" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="edadPersona">Edad:</label>
-                <input type="number" id="edadPersona" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="idioma">Idioma:</label>
-                <select id="idioma" class="form-control" required>
-                    <option value="ES">Español</option>
-                    <option value="EN">Inglés</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Saludar</button>
+        <h1>Comprobar Año Bisiesto</h1>
+        <form id="bisiestoForm">
+            <label for="anio">Ingresa un año:</label>
+            <input type="number" id="anio" name="anio" required>
+            <button type="submit">Comprobar</button>
         </form>
-        <div id="resultado-div" class="alert alert-info" role="alert"></div>
+        <p id="resultado"></p>
     </div>
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script type="module" src="./src/presenter.js"></script>
 </body>
 </html>
-
-
-

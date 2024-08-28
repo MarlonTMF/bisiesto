@@ -1,27 +1,18 @@
-import saludador from "./Saludar";
+import comprobar_bisiesto from "./bisiesto.js";
 
-const nombreInput = document.querySelector("#nombrePersona");
-const generoInput = document.querySelector("#sexoPersona");
-const edadInput = document.querySelector("#edadPersona");
-const idiomaInput = document.querySelector("#idioma");
-const form = document.querySelector("#nombre-form");
-const div = document.querySelector("#resultado-div");
+
+const anioInput = document.querySelector("#anio");
+const form = document.querySelector("#bisiestoForm"); // Corregido para coincidir con el id del formulario
+const div = document.querySelector("#resultado"); // Corregido para coincidir con el id del div
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const nombre = nombreInput.value.trim();
-    const genero = generoInput.value.trim().toLowerCase();
-    const edad = edadInput.value.trim();  // Capturamos la edad
-    const idioma = idiomaInput.value;
+    const anio = anioInput.value; // Se captura el valor del input
+    const resultado = comprobar_bisiesto(anio); // Llama a la función y guarda el resultado
 
-    const saludo = saludador(nombre, genero,edad, idioma);
+    div.innerHTML = `<p>El año ${anio} es ${resultado}</p>`; // Muestra el resultado
 
-    div.innerHTML = `<p>${saludo}</p>`;
-
-    nombreInput.disabled = true;
-    generoInput.disabled = true;
-    edadInput.disabled = true;
-    idiomaInput.disabled = true;
-    event.submitter.disabled = true;
+    anioInput.disabled = true; // Deshabilita el input después de enviar
+    event.submitter.disabled = true; // Deshabilita el botón de envío
 });
